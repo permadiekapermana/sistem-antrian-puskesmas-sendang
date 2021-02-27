@@ -1,0 +1,17 @@
+revisi 1 naskh skripsi:
+bab 1
+- rumusan masalah dalam kalimat tanya, akhiri tanda tanya?
+- maksud dan tujuan tuliskan dalam poin-poin yang saling berkaitan/relevan, maksud di poin 1, apa yang akan dicapai tuliskan di tujuan poin 1, dst...
+- rapikan pada bag penulisan Gambar 1.1
+- detailkan lagi rencana isi dari masing-masing bab...
+- tabel jadwal penelitian disesuaikan dengn timeline semester berjalan
+- tabel 1 spasi/rapat >> remove spacing
+
+bab 2
+- tuliskan deskripsi tinjauan pustaka bag awal/sebelum masuk tabel, dengan urutan identitas seputar jurnal, masalah yang dibahas, metode yg digunakan, desain/ranc sistem, tools yang digunakan baik software/hardware, hasil yang dicapai >> diskusikan dg teman2 yg sudah lulus
+- citasi/kutipan hanya nama belakang penulis
+- sumber reff jurnal ideal 3 taun terakhir, max 5 tahun yang masuk dalam akreditasi sinta cek pada https://sinta.ristekbrin.go.id/journals
+bab 3
+- sumber reff kalau dari buku ideal 5 thun terakhir, max 10 tahun
+==============
+** apabila kesalahan sejenis sekalian direvisi apabila tidak diblok kuning
