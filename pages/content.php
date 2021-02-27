@@ -29,6 +29,11 @@ elseif ($_GET[module]=='PanggilAntrian'){
    include "modul/mod_antrian/antrian.php";
  }
 }
+elseif ($_GET[module]=='Audio'){
+  if ($_SESSION['leveluser']=='admin'){
+   include "modul/mod_audio/audio.php";
+ }
+}
 elseif ($_GET[module]=='Laporan'){
   if ($_SESSION['leveluser']=='admin'){
    include "modul/mod_laporan/laporan.php";

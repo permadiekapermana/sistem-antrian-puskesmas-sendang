@@ -126,6 +126,7 @@
         <li><a href="?module=Dashboard"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
         <li><a href="?module=Users"><i class="fa fa-users"></i> <span>Data Users</span></a></li>
         <li><a href="?module=Poli"><i class="fa fa-circle"></i> <span>Data Poli</span></a></li>
+        <li><a href="?module=Audio"><i class="fa fa-circle"></i> <span>Data Audio Antrian</span></a></li>
         <li><a href="?module=Laporan"><i class="fa fa-file"></i> <span>Data Riwayat Berobat Pasien</span></a></li>
       </ul>    
 
@@ -226,6 +227,12 @@
       'autoWidth'   : false
     })
   })
+</script>
+<script>
+  function play() {
+    var audio = document.getElementById("audio");    
+    audio.play();
+  }
 </script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
-function UploadKematian($fupload_name){
+function UploadAudio($fupload_name){
   //direktori banner
-  $vdir_upload = "../upload/surat_kematian/";
+  $vdir_upload = "../upload/audio/";
   $vfile_upload = $vdir_upload . $fupload_name;
 
   //Simpan gambar dalam ukuran sebenarnya

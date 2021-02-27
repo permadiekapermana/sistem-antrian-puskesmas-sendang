@@ -81,7 +81,13 @@ echo "
       <?php
       } else {
       ?>
-      <a href="#" class="btn btn-warning btn-sm mt-3">Panggil</a>      
+      <a onclick="play()" class="btn btn-warning btn-sm mt-3">Panggil</a>
+      <?php
+      $no_antrian   = $da['kode_poli'].$da['nomor'];
+      $audio  = mysql_query("SELECT * FROM audio WHERE no_antrian='$no_antrian'");
+      $a      = mysql_fetch_array($audio);
+      ?>
+      <audio id='audio' src='modul/upload/audio/<?php echo"$a[file]"; ?>'></audio>
       <a href="<?php echo"$aksi?module=PanggilAntrian&act=tunda&id_antrian=$da[id_antrian]";?>" class="btn btn-info btn-sm mt-3">Tunda</a>
       <a href="<?php echo"$aksi?module=PanggilAntrian&act=selesai&id_antrian=$da[id_antrian]";?>" class="btn btn-success btn-sm mt-3">Selesai</a>
       <?php
@@ -165,7 +171,13 @@ echo "
       <?php
       } else {
       ?>
-      <a href="#" class="btn btn-warning btn-sm mt-3">Panggil</a>      
+      <a onclick="play()" class="btn btn-warning btn-sm mt-3">Panggil</a>
+      <?php
+      $no_antrian2   = $at['kode_poli'].$at['nomor'];
+      $audio2  = mysql_query("SELECT * FROM audio WHERE no_antrian='$no_antrian2'");
+      $a2      = mysql_fetch_array($audio2);
+      ?>
+      <audio id='audio' src='modul/upload/audio/<?php echo"$a2[file]"; ?>'></audio>      
       <a href="<?php echo"$aksi?module=PanggilAntrian&act=selesai&id_antrian=$at[id_antrian]";?>" class="btn btn-primary btn-sm mt-3">Selesai</a>
       <a href="<?php echo"$aksi?module=PanggilAntrian&act=pergi&id_antrian=$at[id_antrian]";?>" class="btn btn-danger btn-sm mt-3">Pasien Pergi</a>
       <?php
