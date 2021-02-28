@@ -71,12 +71,12 @@
         </ul>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Profil Puskesmas</a>
+                <a href="?module=ProfilPuskesmas" class="nav-link">Profil Puskesmas</a>
             </li>
         </ul>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Visi Misi</a>
+                <a href="?module=VisiMisi" class="nav-link">Visi Misi</a>
             </li>
         </ul>
         <ul class="nav navbar-nav ml-auto">

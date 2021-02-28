@@ -12,8 +12,12 @@ if ($_GET['module']=='Home'){
     include "mod_home/home.php";
 }
 
-elseif ($_GET[module]=='Profile'){
-    include "modul/mod_users/users.php";
+elseif ($_GET[module]=='ProfilPuskesmas'){
+    include "mod_profil/profil.php";
+}
+
+elseif ($_GET[module]=='VisiMisi'){
+  include "mod_visimisi/visimisi.php";
 }
 
 else{
