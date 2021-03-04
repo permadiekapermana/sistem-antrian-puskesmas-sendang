@@ -28,8 +28,9 @@ header('location:../../media.php?module='.$module);
 elseif ($module=='PanggilAntrian' AND $act=='selesai'){    
 
 $id_antrian     = $_GET['id_antrian'];
+$operator       = $_SESSION[namauser];
 
-$query=mysql_query("UPDATE antrian SET status_antrian='Selesai', jam_selesai='$jam_sekarang' WHERE id_antrian='$id_antrian'");   
+$query=mysql_query("UPDATE antrian SET status_antrian='Selesai', jam_selesai='$jam_sekarang', username='$operator' WHERE id_antrian='$id_antrian'");   
 header('location:../../media.php?module='.$module);
 
 }
@@ -37,8 +38,9 @@ header('location:../../media.php?module='.$module);
 elseif ($module=='PanggilAntrian' AND $act=='pergi'){    
 
 $id_antrian     = $_GET['id_antrian'];
+$operator       = $_SESSION[namauser];
 
-$query=mysql_query("UPDATE antrian SET status_antrian='Selesai' WHERE id_antrian='$id_antrian'");   
+$query=mysql_query("UPDATE antrian SET status_antrian='Selesai', username='$operator' WHERE id_antrian='$id_antrian'");   
 header('location:../../media.php?module='.$module);
 
 }

@@ -39,7 +39,7 @@ elseif ($_GET[module]=='Laporan'){
    include "modul/mod_laporan/laporan.php";
  }
 }
-elseif ($_GET[module]=='profile'){
+elseif ($_GET[module]=='Profile'){
   if ($_SESSION['leveluser']=='admin' OR $_SESSION['leveluser']=='operator'){
     include "modul/mod_profile/profile.php";
   }

@@ -1,4 +1,3 @@
-
 <?php
 include "../config/koneksi.php";
 session_start();
@@ -58,7 +57,7 @@ echo "
       <td>$r[id_audio]</td>
       <td>$r[no_antrian]</td>
       <td><a onclick=\"play()\" class='btn btn-primary btn-xs'><i class='fa fa-play'></i> Play</a> </td>
-      <audio id='audio' src='modul/upload/audio/33A1.mp3'></audio>
+      <audio id='audio' src='modul/upload/audio/$r[file]'></audio>
       <td width='17%'>        
         <a href='?module=Audio&act=editaudio&id=$r[id_audio]' class='btn btn-success btn-xs'><i class='fa fa-pencil'></i> Edit</a>
         <a href='$aksi?module=Audio&act=hapus&id=$r[id_audio]' class='btn btn-danger btn-xs' onClick=\"return confirm('Yakin ingin hapus data ? Data yang dihapus tidak dapat dipulihkan !')\"><i class='fa fa-trash'></i> Delete</a>
