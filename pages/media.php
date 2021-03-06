@@ -231,6 +231,7 @@
 <script>
   function play() {
     var audio0 = document.getElementById("audio0");
+    var audio1 = document.getElementById("audio1");
     var audio = document.getElementById("audio");
     audio0.play();
     
@@ -238,6 +239,11 @@
       audio.play();
       console.log('your audio is started just now');
     }, 3000)
+
+    setTimeout(function(){
+      audio1.play();
+      console.log('your audio end is started just now');
+    }, 7000)
 
     // function playAudio() {
     //   audio.play();

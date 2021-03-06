@@ -88,6 +88,7 @@ echo "
       $a      = mysql_fetch_array($audio);
       ?>
       <audio id='audio0' src='modul/upload/Airport bells Ringtones.mp3'></audio>
+      <audio id='audio1' src='modul/upload/Airport Bell End.mp3'></audio>
       <audio id='audio' onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 8000)" src='modul/upload/audio/<?php echo"$a[file]"; ?>'></audio>
       <a href="<?php echo"$aksi?module=PanggilAntrian&act=tunda&id_antrian=$da[id_antrian]";?>" class="btn btn-info btn-sm mt-3">Tunda</a>
       <a href="<?php echo"$aksi?module=PanggilAntrian&act=selesai&id_antrian=$da[id_antrian]";?>" class="btn btn-success btn-sm mt-3">Selesai</a>
@@ -172,6 +173,8 @@ echo "
       <?php
       } else {
       ?>
+      <audio id='audio0' src='modul/upload/Airport bells Ringtones.mp3'></audio>
+      <audio id='audio1' src='modul/upload/Airport Bell End.mp3'></audio>
       <a onclick="play()" class="btn btn-warning btn-sm mt-3">Panggil</a>
       <?php
       $no_antrian2   = $at['kode_poli'].$at['nomor'];
