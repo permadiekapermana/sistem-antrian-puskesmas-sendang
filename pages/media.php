@@ -230,8 +230,20 @@
 </script>
 <script>
   function play() {
-    var audio = document.getElementById("audio");    
-    audio.play();
+    var audio0 = document.getElementById("audio0");
+    var audio = document.getElementById("audio");
+    audio0.play();
+    
+    setTimeout(function(){
+      audio.play();
+      console.log('your audio is started just now');
+    }, 3000)
+
+    // function playAudio() {
+    //   audio.play();
+    // }
+
+    // setTimeout("playAudio()", 10);
   }
 </script>
 </body>

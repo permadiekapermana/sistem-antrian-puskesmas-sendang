@@ -87,7 +87,8 @@ echo "
       $audio  = mysql_query("SELECT * FROM audio WHERE no_antrian='$no_antrian'");
       $a      = mysql_fetch_array($audio);
       ?>
-      <audio id='audio' src='modul/upload/audio/<?php echo"$a[file]"; ?>'></audio>
+      <audio id='audio0' src='modul/upload/Airport bells Ringtones.mp3'></audio>
+      <audio id='audio' onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 8000)" src='modul/upload/audio/<?php echo"$a[file]"; ?>'></audio>
       <a href="<?php echo"$aksi?module=PanggilAntrian&act=tunda&id_antrian=$da[id_antrian]";?>" class="btn btn-info btn-sm mt-3">Tunda</a>
       <a href="<?php echo"$aksi?module=PanggilAntrian&act=selesai&id_antrian=$da[id_antrian]";?>" class="btn btn-success btn-sm mt-3">Selesai</a>
       <?php

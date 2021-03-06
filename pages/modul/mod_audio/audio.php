@@ -80,7 +80,7 @@ echo "
 
 <div class='box'>
 <div class='box-header'>
-  <h3 class='box-title'>Tambah Data Kelahiran Penduduk</h3>
+  <h3 class='box-title'>Tambah Data Audio</h3>
 </div>
 <div class='row'>
   <div class='col-md-6'>
@@ -95,7 +95,7 @@ echo "
         <input type='text' class='form-control' name='no_antrian' id='no_antrian' placeholder='Masukkan Nomor Antrian' required>
       </div>
       <div class='form-group'>
-      <label for='fupload'>File Kelahiran</label>
+      <label for='fupload'>File Audio</label>
         <input type='file' class='form-control' name='fupload' id='fupload' required>
       </div>
       <div class='ln_solid'></div>
@@ -150,156 +150,6 @@ echo"
 </div>
 
 </form>
-";
-
-break;
-case "infopenduduk":
-
-$edit = mysql_query("SELECT * FROM `kelahiran`
-                    INNER JOIN `penduduk` ON `kelahiran`.`id_penduduk` = `penduduk`.`id_penduduk`
-                    INNER JOIN `agama` ON `penduduk`.`id_agama` = `agama`.`id_agama`
-                    INNER JOIN `pekerjaan` ON `penduduk`.`id_pekerjaan` = `pekerjaan`.`id_pekerjaan`
-                    INNER JOIN `pendidikan` ON `penduduk`.`id_pendidikan` = `pendidikan`.`id_pendidikan`
-                    INNER JOIN `rt` ON `penduduk`.`id_rt` = `rt`.`id_rt`
-                    INNER JOIN `rw` ON `rt`.`id_rw` = `rw`.`id_rw`
-                    INNER JOIN `blok` ON `rw`.`id_blok` = `blok`.`id_blok`
-                    WHERE id_kelahiran='$_GET[id]'");
-$r    = mysql_fetch_array($edit);
-
-echo "
-<div class='box'>
-<div class='box-header'>
-  <h3 class='box-title'>Detail Penduduk</h3>
-</div>
-<div class='box-body'>
-
-      <h3>A. Data Pribadi</h3>
-      <table class='table table-striped'>
-        <tr>
-          <th width='20%'>NIK</th>
-          <td width='1%'>:</td>
-          <td>$r[nik]</td>
-        </tr>
-        <tr>
-          <th width='20%'>Nomor KK</th>
-          <td width='1%'>:</td>
-          <td>$r[no_kk]</td>
-        </tr>
-        <tr>
-          <th>Nama Warga</th>
-          <td>:</td>
-          <td>$r[nama]</td>
-        </tr>
-        <tr>
-          <th>Tempat Lahir</th>
-          <td>:</td>
-          <td>$r[tmp_lahir]</td>
-        </tr>
-        <tr>
-          <th>Tanggal Lahir</th>
-          <td>:</td>
-          <td>
-            $r[tgl_lahir]
-          </td>
-        </tr>
-        <tr>
-          <th>Jenis Kelamin</th>
-          <td>:</td>
-          <td>$r[jenis_kelamin]</td>
-        </tr>
-      </table>
-
-      <h3>B. Data Orang Tua</h3>";
-      $edit2 = mysql_query("SELECT * FROM penduduk
-                    WHERE id_penduduk='$r[ayah]'");
-      $r2    = mysql_fetch_array($edit2);
-      $edit3 = mysql_query("SELECT * FROM penduduk
-                    WHERE id_penduduk='$r[ibu]'");
-      $r3    = mysql_fetch_array($edit3);
-      echo"
-      <table class='table table-striped'>
-        <tr>
-          <th width='20%'>NIK Ayah</th>
-          <td width='1%'>:</td>
-          <td>$r2[nik]</td>
-        </tr>
-        <tr>
-          <th width='20%'>Nama Ayah</th>
-          <td width='1%'>:</td>
-          <td>$r2[nama]</td>
-        </tr>
-        <tr>
-          <th width='20%'>NIK Ibu</th>
-          <td width='1%'>:</td>
-          <td>$r3[nik]</td>
-        </tr>         
-        <tr>
-          <th width='20%'>Nama Ibu</th>
-          <td width='1%'>:</td>
-          <td>$r3[nama]</td>
-        </tr>    
-      </table>
-      
-      <h3>D. Data Lain-lain</h3>
-      <table class='table table-striped'>
-        <tr>
-          <th width='20%'>Golongan Darah</th>
-          <td width='1%'>:</td>
-          <td>$r[gol_darah]</td>
-        </tr>
-        <tr>
-          <th>Agama</th>
-          <td>:</td>
-          <td>$r[agama]</td>
-        </tr>
-        <tr>
-          <th>Pendidikan</th>
-          <td>:</td>
-          <td>$r[pendidikan]</td>
-        </tr>
-        <tr>
-          <th>Pekerjaan</th>
-          <td>:</td>
-          <td>$r[pekerjaan]</td>
-        </tr>
-        <tr>
-          <th>Status Nikah</th>
-          <td>:</td>
-          <td>$r[status_nikah]</td>
-        </tr>
-        <tr>
-          <th>Status Tinggal</th>
-          <td>:</td>
-          <td>$r[status_tinggal]</td>
-        </tr>
-      </table>
-
-      <h3>E. Data Kelahiran</h3>
-      <table class='table table-striped'>
-        <tr>
-          <th width='20%'>Waktu Lahir (Jam)</th>
-          <td width='1%'>:</td>
-          <td>$r[jam]</td>
-        </tr>
-        <tr>
-          <th>Tempat Lahir</th>
-          <td>:</td>
-          <td>$r[tmp_lahir]</td>
-        </tr>
-        <tr>
-          <th>Nama Bidan</th>
-          <td>:</td>
-          <td>$r[nama_bidan]</td>
-        </tr>
-        <tr>
-          <th>Keterangan</th>
-          <td>:</td>
-          <td>$r[keterangan]</td>
-        </tr>
-      </table>
-
-</div>
-</div>
 ";
 
 break;
