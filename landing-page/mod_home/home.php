@@ -38,6 +38,7 @@ $aksi="aksi_antrian.php";
         <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
+          
             <div class="inner">
               <?php
               $nomor_antrian  = mysql_query("SELECT *, COUNT(id_antrian) as jumlah FROM `antrian` WHERE id_poli='$p1[id_poli]' AND tgl_berobat=$tgl_sekarang");
@@ -72,7 +73,8 @@ $aksi="aksi_antrian.php";
             <div class="icon">
                 <i class="ion ion-person-add"></i>
             </div>
-            <div class="small-box-footer">Sisa Antrian : <?php echo"$m[jumlah]";?></div>
+            
+            <div class="text-center">Sisa Antrian : <?php echo"$m[jumlah]";?></div>
               <?php
               $antrian  = mysql_query("SELECT * FROM `antrian` WHERE id_poli='$p1[id_poli]' AND tgl_berobat=$tgl_sekarang ORDER BY id_antrian DESC LIMIT 1");
               $r2       = mysql_fetch_array($antrian);
@@ -81,13 +83,35 @@ $aksi="aksi_antrian.php";
                 <div class='small-box-footer bg-red'>Antrian Penuh</div>
                 ";
               } else {
-                echo"
-                <a onclick=\"open_in_new_tab_and_reload('$aksi?module=Home&act=input&id_antrian=$nopel&id_poli=$p1[id_poli]')\" href='#' class='small-box-footer'>Ambil Nomor Antrian</a>
+                echo"                
+                
                 ";
               }
               ?>
+              <!-- <a onclick=\"open_in_new_tab_and_reload('$aksi?module=Home&act=input&id_antrian=$nopel&id_poli=$p1[id_poli]')\" href='#' class='small-box-footer'>Ambil Nomor Antrian</a> -->
+              
           </div>
+          <?php
+            $antrian  = mysql_query("SELECT * FROM `antrian` WHERE id_poli='$p1[id_poli]' AND tgl_berobat=$tgl_sekarang ORDER BY id_antrian DESC LIMIT 1");
+            $r2       = mysql_fetch_array($antrian);
+            if($r2[nomor]==$p1[max_perhari]) {
+              echo"
+              
+              ";
+            } else {
+              echo"                
+              <form target='_blank' action='$aksi?module=Home&act=input&id_antrian=$nopel&id_poli=$p1[id_poli]' method='POST'>
+              <div class='form-group mb-5'>
+                <input type='text' name='nama' class='col-lg-8 col-xs-6' font-color='black' placeholder='Masukkan Nama Anda' required>
+                <button type='submit' onClick='window.location.reload();' class='btn-primary col-lg-4 col-xs-6'>Cetak Tiket</button>
+              </div>
+              </form>
+              ";
+            }
+          ?>
+          
         </div>
+        
         <!-- ./col -->
         <div class="col-lg-4 col-xs-6">
           <!-- small box -->
@@ -136,11 +160,29 @@ $aksi="aksi_antrian.php";
                 ";
               } else {
                 echo"
-                <a onclick=\"open_in_new_tab_and_reload('$aksi?module=Home&act=input&id_antrian=$nopel&id_poli=$p2[id_poli]')\" href='#' class='small-box-footer'>Ambil Nomor Antrian</a>
+                
                 ";
               }
               ?>
           </div>
+          <?php
+            $antrian  = mysql_query("SELECT * FROM `antrian` WHERE id_poli='$p2[id_poli]' AND tgl_berobat=$tgl_sekarang ORDER BY id_antrian DESC LIMIT 1");
+            $r2       = mysql_fetch_array($antrian);
+            if($r2[nomor]==$p2[max_perhari]) {
+              echo"
+              
+              ";
+            } else {
+              echo"                
+              <form target='_blank' action='$aksi?module=Home&act=input&id_antrian=$nopel&id_poli=$p2[id_poli]' method='POST'>
+              <div class='form-group mb-5'>
+                <input type='text' name='nama' class='col-lg-8 col-xs-6' font-color='black' placeholder='Masukkan Nama Anda' required>
+                <button type='submit' onClick='window.location.reload();' class='btn-success col-lg-4 col-xs-6'>Cetak Tiket</button>
+              </div>
+              </form>
+              ";
+            }
+          ?>
         </div>
         <!-- ./col -->
         <div class="col-lg-4 col-xs-6">
@@ -190,11 +232,29 @@ $aksi="aksi_antrian.php";
                 ";
               } else {
                 echo"
-                <a onclick=\"open_in_new_tab_and_reload('$aksi?module=Home&act=input&id_antrian=$nopel&id_poli=$p3[id_poli]')\" href='#' class='small-box-footer'>Ambil Nomor Antrian</a>
+                
                 ";
               }
               ?>
           </div>
+          <?php
+            $antrian  = mysql_query("SELECT * FROM `antrian` WHERE id_poli='$p3[id_poli]' AND tgl_berobat=$tgl_sekarang ORDER BY id_antrian DESC LIMIT 1");
+            $r2       = mysql_fetch_array($antrian);
+            if($r2[nomor]==$p3[max_perhari]) {
+              echo"
+              
+              ";
+            } else {
+              echo"                
+              <form target='_blank' action='$aksi?module=Home&act=input&id_antrian=$nopel&id_poli=$p3[id_poli]' method='POST'>
+              <div class='form-group mb-5'>
+                <input type='text' name='nama' class='col-lg-8 col-xs-6' font-color='black' placeholder='Masukkan Nama Anda' required>
+                <button type='submit' onClick='window.location.reload();' class='btn-danger col-lg-4 col-xs-6'>Cetak Tiket</button>
+              </div>
+              </form>
+              ";
+            }
+          ?>
         </div>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <div class="alert alert-danger text-right" role="alert">

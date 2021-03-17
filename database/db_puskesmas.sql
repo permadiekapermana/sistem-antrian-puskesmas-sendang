@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2021 at 10:31 AM
+-- Generation Time: Mar 17, 2021 at 08:37 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 5.6.40
 
@@ -31,6 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `antrian` (
   `id_antrian` varchar(11) NOT NULL,
   `id_poli` varchar(11) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
   `tgl_berobat` date NOT NULL,
   `jam_mulai` time NOT NULL,
   `jam_selesai` time DEFAULT NULL,
@@ -43,11 +44,21 @@ CREATE TABLE `antrian` (
 -- Dumping data for table `antrian`
 --
 
-INSERT INTO `antrian` (`id_antrian`, `id_poli`, `tgl_berobat`, `jam_mulai`, `jam_selesai`, `status_antrian`, `nomor`, `username`) VALUES
-('QUEU.000001', 'POLI.000001', '2021-03-06', '13:20:05', '16:05:45', 'Selesai', 1, 'adit'),
-('QUEU.000002', 'POLI.000002', '2021-03-06', '16:00:37', '16:05:33', 'Selesai', 1, 'adit'),
-('QUEU.000003', 'POLI.000002', '2021-03-06', '16:05:08', '16:08:25', 'Selesai', 2, 'adit'),
-('QUEU.000004', 'POLI.000003', '2021-03-06', '16:19:30', NULL, 'Dipanggil', 1, NULL);
+INSERT INTO `antrian` (`id_antrian`, `id_poli`, `nama`, `tgl_berobat`, `jam_mulai`, `jam_selesai`, `status_antrian`, `nomor`, `username`) VALUES
+('QUEU.000001', 'POLI.000001', '', '2021-03-06', '13:20:05', '16:05:45', 'Selesai', 1, 'adit'),
+('QUEU.000002', 'POLI.000002', '', '2021-03-06', '16:00:37', '16:05:33', 'Selesai', 1, 'adit'),
+('QUEU.000003', 'POLI.000002', '', '2021-03-06', '16:05:08', '16:08:25', 'Selesai', 2, 'adit'),
+('QUEU.000004', 'POLI.000003', '', '2021-03-06', '16:19:30', NULL, 'Dipanggil', 1, NULL),
+('QUEU.000005', 'POLI.000001', '', '2021-03-14', '18:47:12', '18:53:08', 'Selesai', 1, 'adit'),
+('QUEU.000006', 'POLI.000003', '', '2021-03-14', '18:53:03', '19:00:56', 'Selesai', 1, 'adit'),
+('QUEU.000007', 'POLI.000002', '', '2021-03-14', '19:01:00', NULL, 'Dipanggil', 1, NULL),
+('QUEU.000008', 'POLI.000001', NULL, '2021-03-17', '14:07:49', NULL, 'Dalam Antrian', 1, NULL),
+('QUEU.000009', 'POLI.000001', NULL, '2021-03-17', '14:13:04', NULL, 'Dalam Antrian', 2, NULL),
+('QUEU.000010', 'POLI.000001', NULL, '2021-03-17', '14:24:26', NULL, 'Dalam Antrian', 3, NULL),
+('QUEU.000011', 'POLI.000001', NULL, '2021-03-17', '14:25:19', NULL, 'Dalam Antrian', 4, NULL),
+('QUEU.000012', 'POLI.000001', NULL, '2021-03-17', '14:27:08', NULL, 'Dalam Antrian', 5, NULL),
+('QUEU.000013', 'POLI.000001', 'adit', '2021-03-17', '14:28:25', NULL, 'Dalam Antrian', 6, NULL),
+('QUEU.000014', 'POLI.000001', 'pep', '2021-03-17', '14:29:44', NULL, 'Dalam Antrian', 7, NULL);
 
 -- --------------------------------------------------------
 

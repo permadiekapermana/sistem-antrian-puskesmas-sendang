@@ -12,6 +12,7 @@ $act=$_GET[act];
 // Input users
 if ($module=='Home' AND $act=='input'){
 
+$nama             = $_POST['nama'];
 $id_antrian       = $_GET['id_antrian'];
 $id_poli          = $_GET['id_poli'];
 $status           = 'Dalam Antrian';
@@ -27,7 +28,7 @@ if ($r['jumlah']>0) {
   $nomor = 1;
 }
 
-$query=mysql_query("INSERT INTO antrian (id_antrian, id_poli, tgl_berobat, jam_mulai, status_antrian, nomor) VALUES ('$id_antrian', '$id_poli', '$tgl_sekarang', '$jam_sekarang', '$status', '$nomor')");
+$query=mysql_query("INSERT INTO antrian (id_antrian, id_poli, nama, tgl_berobat, jam_mulai, status_antrian, nomor) VALUES ('$id_antrian', '$id_poli', '$nama', '$tgl_sekarang', '$jam_sekarang', '$status', '$nomor')");
 header('location:../landing-page/mod_home/cetak.php');
 
   

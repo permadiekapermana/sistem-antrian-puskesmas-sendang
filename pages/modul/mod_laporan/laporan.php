@@ -36,11 +36,13 @@ echo "
     <tr>
       <th>No.</th>
       <th>ID Antrian</th>
+      <th>Nama Pasien</th>
       <th>Tanggal Berobat</th>
       <th>Nomor Antrian</th>
       <th>Jam Mulai</th>
       <th>Jam Selesai</th>      
       <th>Status Antrian</th> 
+      <th>Diproses Oleh</th> 
     </tr>
     </thead>
     <tbody>";
@@ -54,11 +56,13 @@ echo "
     <tr>
       <td width='5%'>$no.</td>
       <td>$r[id_antrian]</td>
+      <td>$r[nama]</td>
       <td>$r[tgl_berobat]</td>
       <td>$r[kode_poli]$r[nomor]</td>
       <td>$r[jam_mulai]</td>
       <td>$r[jam_selesai]</td>
       <td>$r[status_antrian]</td> 
+      <td>$r[username]</td> 
     </tr>";
     $no++;
     }
